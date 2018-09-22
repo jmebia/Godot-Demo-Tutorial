@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Cube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Goal.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="World" type="Node" index="0"]
+
+[node name="Cubes" type="Node" parent="." index="0"]
+
+[node name="Cube" parent="Cubes" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 128, 256 )
+
+[node name="Cube2" parent="Cubes" index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 128, 160 )
+
+[node name="Cube3" parent="Cubes" index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 224, 96 )
+
+[node name="Cube4" parent="Cubes" index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 320, 160 )
+
+[node name="Cube6" parent="Cubes" index="4" instance=ExtResource( 1 )]
+
+position = Vector2( 320, 256 )
+
+[node name="Cube7" parent="Cubes" index="5" instance=ExtResource( 1 )]
+
+position = Vector2( 416, 256 )
+
+[node name="Cube18" parent="Cubes" index="6" instance=ExtResource( 1 )]
+
+position = Vector2( 512, 256 )
+
+[node name="Cube19" parent="Cubes" index="7" instance=ExtResource( 1 )]
+
+position = Vector2( 704, 480 )
+
+[node name="Cube8" parent="Cubes" index="8" instance=ExtResource( 1 )]
+
+position = Vector2( 608, 256 )
+
+[node name="Cube9" parent="Cubes" index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 704, 288 )
+
+[node name="Cube10" parent="Cubes" index="10" instance=ExtResource( 1 )]
+
+position = Vector2( 704, 384 )
+
+[node name="Cube11" parent="Cubes" index="11" instance=ExtResource( 1 )]
+
+position = Vector2( 512, 416 )
+
+[node name="Cube12" parent="Cubes" index="12" instance=ExtResource( 1 )]
+
+position = Vector2( 416, 416 )
+
+[node name="Cube13" parent="Cubes" index="13" instance=ExtResource( 1 )]
+
+position = Vector2( 320, 416 )
+
+[node name="Cube14" parent="Cubes" index="14" instance=ExtResource( 1 )]
+
+position = Vector2( 224, 416 )
+
+[node name="Cube15" parent="Cubes" index="15" instance=ExtResource( 1 )]
+
+position = Vector2( 128, 352 )
+
+[node name="Goal" type="Area2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 608, 512 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Goal" index="0"]
+
+modulate = Color( 0.382318, 0.949219, 0.24472, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+editor/display_folded = false
+position = Vector2( 224, 192 )
+
+[node name="LabelWin" type="Label" parent="." index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 480.0
+margin_top = 160.0
+margin_right = 540.0
+margin_bottom = 174.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "YOU WIN"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility" ]
+
+
